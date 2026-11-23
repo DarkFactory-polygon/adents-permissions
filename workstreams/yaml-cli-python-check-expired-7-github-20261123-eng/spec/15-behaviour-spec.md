@@ -1,12 +1,14 @@
 ---
 spec_stage: behaviour-spec
-status: approval_pending
+status: approved
 owner_role: product
 traces_to: [requirements]
 upstream_hashes:
   requirements: "7a1b8b3bbadf1dccdd650816e8069820e3af6514"
 approved_content_hash: d7fa7166924bac8e02f949c469502e96b5d1abd7
 version: 2
+approved_at: '2026-11-23T16:24:43Z'
+approved_by: ai-prosto
 ---
 
 # Behaviour Spec — Реестр прав агентов: CLI `check` и `expired`
