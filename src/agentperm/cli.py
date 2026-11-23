@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from typing import NoReturn
 
 from agentperm import clock, render
 from agentperm.check import decide, split_expiry
@@ -13,9 +14,23 @@ from agentperm.loader import load_records
 DEFAULT_FILE = "permissions.yaml"
 
 
+USAGE = (
+    "использование: agentperm check АГЕНТ ДЕЙСТВИЕ РЕСУРС [--file ПУТЬ]\n"
+    "               agentperm expired [--file ПУТЬ]"
+)
+
+
+class _Parser(argparse.ArgumentParser):
+    """Ошибка вызова: одна строка + подсказка с двумя командами, код 2 (D-13)."""
+
+    def error(self, message: str) -> NoReturn:
+        print(f"ошибка: неверный вызов\n{USAGE}", file=sys.stderr)
+        raise SystemExit(2)
+
+
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="agentperm")
-    sub = parser.add_subparsers(dest="command", required=True)
+    parser = _Parser(prog="agentperm", usage=USAGE)
+    sub = parser.add_subparsers(dest="command", required=True, parser_class=_Parser)
     check = sub.add_parser("check", help="проверить право агента")
     check.add_argument("agent")
     check.add_argument("action")

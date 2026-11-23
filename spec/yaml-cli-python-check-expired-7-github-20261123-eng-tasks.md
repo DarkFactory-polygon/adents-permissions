@@ -364,7 +364,7 @@ Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-
 **Traces to:** [FR-01], [FR-03], [FR-07]
 
 ### TASK-007: Выбор файла прав и граница двух команд с подсказкой вызова
-P2 | TODO   Est: 0.5d
+P2 | ✅ DONE   Est: 0.5d
 
 Реализовать сценарии BEH-21, BEH-22 (DT-07, группа cross-checks).
 Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-decomposition.md#DT-07
@@ -372,10 +372,10 @@ Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-
 **Depends on:** [TASK-003], [TASK-004]
 
 **Checklist:**
-- [ ] реализовать BEH-21: `--file` и значение по умолчанию (DEL-25 (capability): `--file <путь>` выбирает файл прав, а без этого ключа используется `permissions.yaml` текущего рабочего каталога, и ответы обеих команд — текст и код выхода — соответствуют именно выбранному файлу, а не другому файлу того же каталога)
-- [ ] реализовать BEH-22: Неизвестная команда и неверное число аргументов (DEL-26 (capability): Имён команд ровно два: вызовы `grant`, `renew`, `revoke`, `import`, `sync`, вызов без команды и `check` с двумя или четырьмя аргументами печатают сообщение об ошибке с подсказкой вызова, в которой перечислены только `check` и `expired`, и завершаются кодом 2 без «разрешено» и без строк групп)
-- [ ] DEL-27 (capability): Разбор вызова происходит до любого обращения к файлу прав: вывод и код выхода неверного вызова одинаковы при верном, сломанном и отсутствующем файле прав
-- [ ] проверка группы: tests/e2e/test_cli_invocation.py::test_file_option_and_default_path (kind: e2e), tests/e2e/test_cli_invocation.py::test_unknown_command_and_bad_arity_exit_2 (kind: e2e) зелёные на BEH-21, BEH-22
+- [x] реализовать BEH-21: `--file` и значение по умолчанию (DEL-25 (capability): `--file <путь>` выбирает файл прав, а без этого ключа используется `permissions.yaml` текущего рабочего каталога, и ответы обеих команд — текст и код выхода — соответствуют именно выбранному файлу, а не другому файлу того же каталога)
+- [x] реализовать BEH-22: Неизвестная команда и неверное число аргументов (DEL-26 (capability): Имён команд ровно два: вызовы `grant`, `renew`, `revoke`, `import`, `sync`, вызов без команды и `check` с двумя или четырьмя аргументами печатают сообщение об ошибке с подсказкой вызова, в которой перечислены только `check` и `expired`, и завершаются кодом 2 без «разрешено» и без строк групп)
+- [x] DEL-27 (capability): Разбор вызова происходит до любого обращения к файлу прав: вывод и код выхода неверного вызова одинаковы при верном, сломанном и отсутствующем файле прав
+- [x] проверка группы: tests/e2e/test_cli_invocation.py::test_file_option_and_default_path (kind: e2e), tests/e2e/test_cli_invocation.py::test_unknown_command_and_bad_arity_exit_2 (kind: e2e) зелёные на BEH-21, BEH-22
 
 **Traces to:** [FR-06], [FR-04], [FR-09]
 
