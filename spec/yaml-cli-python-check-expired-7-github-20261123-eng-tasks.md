@@ -477,7 +477,7 @@ Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-
 **Traces to:** [NFR-08]
 
 ### TASK-014: Чистое окружение: Python 3.12 и только PyYAML, без оплаты
-P2 | 🔄 IN_PROGRESS   Est: 0.5d
+P2 | ✅ DONE   Est: 0.5d
 
 Проверить сценарии BEH-30 (DT-14, группа environment).
 Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-decomposition.md#DT-14
@@ -487,8 +487,8 @@ Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-
 **Depends on:** [TASK-003], [TASK-004]
 
 **Checklist:**
-- [ ] проверить BEH-30: Чистое окружение: Python 3.12 и только PyYAML, без оплаты (DEL-35 (document): Заполненный документ ручной проверки содержит: установку в чистом окружении с Python 3.12 и единственным сторонним PyYAML без компиляторов и дополнительных системных пакетов, ожидаемые выводы и коды выхода прогонов сценариев BEH-01, BEH-02, BEH-03, BEH-09, BEH-10, BEH-11, BEH-13, пустой список сторонних пакетов кроме PyYAML и отсутствие шага регистрации, подписки и оплаты)
-- [ ] проверка группы: tests/manual/test_clean_environment.md::MAN-NFR-09-python312-pyyaml-only (kind: manual) зелёные на BEH-30
+- [x] проверить BEH-30: Чистое окружение: Python 3.12 и только PyYAML, без оплаты (DEL-35 (document): Заполненный документ ручной проверки содержит: установку в чистом окружении с Python 3.12 и единственным сторонним PyYAML без компиляторов и дополнительных системных пакетов, ожидаемые выводы и коды выхода прогонов сценариев BEH-01, BEH-02, BEH-03, BEH-09, BEH-10, BEH-11, BEH-13, пустой список сторонних пакетов кроме PyYAML и отсутствие шага регистрации, подписки и оплаты)
+- [x] проверка группы: tests/manual/test_clean_environment.md::MAN-NFR-09-python312-pyyaml-only (kind: manual) зелёные на BEH-30
 
 **Traces to:** [NFR-09], [NFR-06]
 
