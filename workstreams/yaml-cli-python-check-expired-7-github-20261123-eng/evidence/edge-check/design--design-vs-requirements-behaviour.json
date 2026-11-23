@@ -1,0 +1,126 @@
+{
+  "absence": [],
+  "attempt_id": "bc4ad270aace422d8c60c331e346086d",
+  "bases": [
+    {
+      "path": "10-requirements.md",
+      "role": "requirements",
+      "sha256": "613662cf438f475c9809668bbfa86b0113dc951420323a117f7fc7e9a1e6672a",
+      "size": 38150
+    },
+    {
+      "path": "15-behaviour-spec.md",
+      "role": "behaviour-spec",
+      "sha256": "a612e4164ce1a5c409f9ae017dbbfbf13b0bf1382a2915cbaebb22097fc6f122",
+      "size": 46557
+    }
+  ],
+  "check_identity": "7e2ff0f2ad3e44181eedc4d258427744b8725b5e7e4ed19b83dbfa5e10679847",
+  "context": {
+    "estimate_tokens": 34294,
+    "limit_tokens": 120000,
+    "method": "utf8-bytes/4",
+    "reserve_tokens": 8000,
+    "size": 137179,
+    "unit": "utf8-bytes"
+  },
+  "criteria": [
+    {
+      "id": "R1",
+      "reason": "все 21 требование и все 32 сценария получили названный механизм в таблицах трассировки, без пропусков и без неявных отказов",
+      "status": "pass"
+    },
+    {
+      "id": "R2",
+      "reason": "проверенные границы (окно 7 дней, включительность, коды выхода, точное сравнение, формат даты, пустой список) совпадают с требованиями и контрольными примерами, уточнения объявлены явно",
+      "status": "pass"
+    },
+    {
+      "id": "R3",
+      "reason": "каждое решение D-01–D-23 несёт traces на существующие требования или сценарии",
+      "status": "pass"
+    },
+    {
+      "id": "R4",
+      "reason": "таксономия ошибок покрывает все состояния ошибок требований, границы authority (отказ по умолчанию, отсутствие изменения, сети и записи) отражены явно",
+      "status": "pass"
+    }
+  ],
+  "edge": "design-vs-requirements-behaviour",
+  "findings": [
+    {
+      "class": "minor",
+      "location": {
+        "lines": [
+          216,
+          220
+        ],
+        "path": "20-design.md"
+      },
+      "rule_id": "R3",
+      "statement": "Трассировка односторонняя: таблица требований относит FR-06 к D-13, а таблица сценариев — BEH-22 к D-15 и BEH-24 к D-09/D-15, тогда как списки traces самих D-13, D-15 и D-09 этих идентификаторов не содержат."
+    },
+    {
+      "class": "minor",
+      "location": {
+        "lines": [
+          245,
+          248
+        ],
+        "path": "20-design.md"
+      },
+      "rule_id": "R1",
+      "statement": "Обязательство FR-02 и BEH-10 «каждая строка expired содержит все пять полей» названо лишь ответственностью render и оговоркой раздела «Вне объёма», а не отдельным нумерованным решением D-*."
+    }
+  ],
+  "finished_at": "2026-11-23T16:44:11.781777+00:00",
+  "node": "design",
+  "result_key": "3ee17fb99a573e1bf447fd6380c47ec4a6eb34ca202afbafe3a0fc8869c2ad56",
+  "reviewer": {
+    "effort": null,
+    "env_passthrough": [
+      "ANTHROPIC_BASE_URL",
+      "HOME",
+      "PATH",
+      "TMPDIR",
+      "USER"
+    ],
+    "harness": "claude",
+    "harness_version": "2.1.330 (Claude Code)",
+    "model": "claude-opus-5",
+    "model_id": null
+  },
+  "rules": {
+    "id": "design-vs-requirements-behaviour",
+    "items": [
+      [
+        "R1",
+        "Каждое Must-требование и каждый сценарий BEH получают в дизайне названный механизм (компонент, поток, решение) или явный отказ с причиной."
+      ],
+      [
+        "R2",
+        "Дизайн не противоречит требованиям и сценариям и не сужает их без объявления."
+      ],
+      [
+        "R3",
+        "Каждое решение дизайна (D-*) прослеживается к требованию или сценарию."
+      ],
+      [
+        "R4",
+        "Состояния ошибок и границы authority из требований отражены в дизайне."
+      ]
+    ]
+  },
+  "schema_version": 1,
+  "started_at": "2026-11-23T16:39:12.741119+00:00",
+  "subject": [
+    {
+      "path": "20-design.md",
+      "role": "subject",
+      "sha256": "6e3d2f12cac5991fb8b0553bdb6c8d2d0e414dba71bfa2e9e7b46976d8f9b91e",
+      "size": 47728
+    }
+  ],
+  "verdict": "PASS",
+  "wave": 4
+}
