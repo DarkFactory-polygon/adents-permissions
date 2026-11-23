@@ -509,7 +509,7 @@ Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-
 **Traces to:** [NFR-10]
 
 ### TASK-016: Приёмка по выводу команд на примерах пользователя
-P2 | 🔄 IN_PROGRESS   Est: 0.5d
+P2 | ✅ DONE   Est: 0.5d
 
 Проверить сценарии BEH-32 (DT-16, группа environment).
 Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-decomposition.md#DT-16
