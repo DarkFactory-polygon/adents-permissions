@@ -1,7 +1,7 @@
 ---
 spec_stage: decomposition
 dt_contract_version: 2
-status: approval_pending
+status: approved
 owner_role: tech-lead
 traces_to: [design, acceptance]
 upstream_hashes:
@@ -9,6 +9,8 @@ upstream_hashes:
   acceptance: "fafa56a67252bdec36011bdb3bbacd7caf0f986e"
 approved_content_hash: 5d08feed378bfead2896de59cd7b8404320f84b1
 version: 2
+approved_at: '2026-11-23T17:30:44Z'
+approved_by: ai-prosto
 ---
 
 # Decomposition — Реестр прав агентов: YAML-файл и локальный CLI (`check`, `expired`)
