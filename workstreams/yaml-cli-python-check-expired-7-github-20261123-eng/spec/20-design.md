@@ -1,6 +1,6 @@
 ---
 spec_stage: design
-status: approval_pending
+status: approved
 owner_role: architects
 traces_to: [requirements, behaviour-spec]
 upstream_hashes:
@@ -8,6 +8,8 @@ upstream_hashes:
   behaviour-spec: "cc47a55ebdd4fdb9b00d210f02c2911bc3a533c6"
 approved_content_hash: 27f662aa5c5f0671309bbe3b23e3115f863d989d
 version: 2
+approved_at: '2026-11-23T16:49:01Z'
+approved_by: ai-prosto
 ---
 
 # Design — Реестр прав агентов: YAML-файл и локальный CLI (`check`, `expired`)

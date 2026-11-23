@@ -1,6 +1,6 @@
 ---
 spec_stage: acceptance
-status: approval_pending
+status: approved
 owner_role: qa
 traces_to: [requirements, behaviour-spec]
 upstream_hashes:
@@ -8,6 +8,8 @@ upstream_hashes:
   behaviour-spec: "cc47a55ebdd4fdb9b00d210f02c2911bc3a533c6"
 approved_content_hash: b808e5d352759fe8cf2a70df1d276b68830c5750
 version: 2
+approved_at: '2026-11-23T16:49:01Z'
+approved_by: ai-prosto
 ---
 
 # Acceptance — Реестр прав агентов: локальный CLI `check` и `expired`
