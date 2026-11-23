@@ -286,7 +286,7 @@ Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-
 **Traces to:** [FR-03], [FR-08], [FR-05], [NFR-01], [NFR-05]
 
 ### TASK-003: Ответ `check`: точное совпадение, срок, причина, коды 0 и 1
-P2 | TODO   Est: 0.5d
+P2 | 🔄 IN_PROGRESS   Est: 0.5d
 
 Реализовать сценарии BEH-01, BEH-02, BEH-03, BEH-04, BEH-05, BEH-06, BEH-07 (DT-03, группа commands).
 Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-decomposition.md#DT-03

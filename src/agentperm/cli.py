@@ -5,7 +5,8 @@ from __future__ import annotations
 import argparse
 import sys
 
-from agentperm import render
+from agentperm import clock, render
+from agentperm.check import decide
 from agentperm.errors import RegistryError
 from agentperm.loader import load_records
 
@@ -28,10 +29,9 @@ def build_parser() -> argparse.ArgumentParser:
 def _run(args: argparse.Namespace) -> int:
     records = load_records(args.file)  # любая ошибка файла — до какого-либо ответа
     if args.command == "check":
-        # Сопоставление записей — TASK-003; до него отказ по умолчанию (NFR-01).
-        _ = records
-        print(render.DENY_NO_RECORD)
-        return 1
+        decision = decide(records, args.agent, args.action, args.resource, clock.today())
+        print(render.decision_line(decision))
+        return 0 if decision.allowed else 1
     # Разбиение на группы — TASK-004.
     print(render.HEADER_EXPIRED)
     print(render.HEADER_EXPIRING)
