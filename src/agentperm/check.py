@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import date
+from datetime import date, timedelta
 
 from agentperm.record import Record
 
@@ -28,3 +28,17 @@ def decide(
         # наименьшая дата окончания, при равных — меньший порядковый номер (DEL-17)
         return Decision(True, min(valid, key=lambda r: (r.until, r.number)))
     return Decision(False, expired=bool(matching))
+
+
+WINDOW_DAYS = 7
+
+
+def split_expiry(
+    records: list[Record], today: date
+) -> tuple[list[Record], list[Record]]:
+    """Просроченные (until < today) и истекающие (today <= until <= today+7)."""
+    limit = today + timedelta(days=WINDOW_DAYS)
+    ordered = sorted(records, key=lambda r: (r.until, r.number))
+    overdue = [r for r in ordered if r.until < today]
+    expiring = [r for r in ordered if today <= r.until <= limit]
+    return overdue, expiring

@@ -6,7 +6,7 @@ import argparse
 import sys
 
 from agentperm import clock, render
-from agentperm.check import decide
+from agentperm.check import decide, split_expiry
 from agentperm.errors import RegistryError
 from agentperm.loader import load_records
 
@@ -32,9 +32,13 @@ def _run(args: argparse.Namespace) -> int:
         decision = decide(records, args.agent, args.action, args.resource, clock.today())
         print(render.decision_line(decision))
         return 0 if decision.allowed else 1
-    # Разбиение на группы — TASK-004.
+    overdue, expiring = split_expiry(records, clock.today())
     print(render.HEADER_EXPIRED)
+    for rec in overdue:
+        print(render.record_row(rec))
     print(render.HEADER_EXPIRING)
+    for rec in expiring:
+        print(render.record_row(rec))
     return 0
 
 
