@@ -1,0 +1,90 @@
+{
+  "absence": [],
+  "attempt_id": "0262573403194986b0de7826b6c4fba7",
+  "bases": [
+    {
+      "path": "00-discovery/brief.md",
+      "role": "engineer-brief",
+      "sha256": "cc9f890192ea807d5481c55a0aee5affba3f73e9cf9464de6259ea341763cc64",
+      "size": 3654
+    }
+  ],
+  "check_identity": "8ea838626d232623a000b5feb1712181d839291cfd8c02026075f6988a4bd2cd",
+  "context": {
+    "estimate_tokens": 11647,
+    "limit_tokens": 120000,
+    "method": "utf8-bytes/4",
+    "reserve_tokens": 8000,
+    "size": 46588,
+    "unit": "utf8-bytes"
+  },
+  "criteria": [
+    {
+      "id": "R1",
+      "reason": "Все уточнения инженерного брифа (CON-01–CON-03, S-01–S-04, IF-01–IF-03, AP-01, AP-02, RK-01–RK-03, Q-01, X-01–X-04) отражены в charter адресно: стек и запрет платного — CON-04/NFR-06, запреты сети, записи и секретов — CON-03/CON-07/CON-08, «сегодня» и код 0 у expired — CON-11, интерфейс запуска и единственный потребитель — CON-12/P-01, архитектурные предпочтения — CON-13, грабли и носитель знания — RK-05/RK-06/RK-07, объём файла — Q-05.",
+      "status": "pass"
+    },
+    {
+      "id": "R2",
+      "reason": "Противоречий не найдено: коды выхода (FR-04 для check, CON-11 для expired), запрет записи и журналов (NFR-04 против CON-01 брифа), стек и бесплатность, локальный запуск и несвязанность с GitHub/облаками и конфигами (OUT-01/OUT-02/OUT-08) согласуются с брифом, а статусы конфликтов X-01–X-04 и отсутствие блокирующих вопросов совпадают с метаданными брифа.",
+      "status": "pass"
+    }
+  ],
+  "edge": "charter-vs-engineer-brief",
+  "findings": [
+    {
+      "class": "minor",
+      "location": {
+        "lines": [
+          284,
+          287
+        ],
+        "path": "00-charter.md"
+      },
+      "rule_id": "R1",
+      "statement": "Конфликты X-01–X-04 инженерного брифа отражены ссылкой на прозаический раздел «Назначение и основания», а не на адресуемый элемент charter: трассировка проверяема только пересказом, хотя сами вердикты «реализуемо как есть» для FR-01, FR-02, FR-03 и FR-05 переданы верно."
+    }
+  ],
+  "finished_at": "2026-11-23T15:54:15.439966+00:00",
+  "node": "charter",
+  "result_key": "63940d643b00f4e64750ab7ccffae3e4f89fb335a6eae599760f0acde1899c9f",
+  "reviewer": {
+    "effort": null,
+    "env_passthrough": [
+      "ANTHROPIC_BASE_URL",
+      "HOME",
+      "PATH",
+      "TMPDIR",
+      "USER"
+    ],
+    "harness": "claude",
+    "harness_version": "2.1.330 (Claude Code)",
+    "model": "claude-opus-5",
+    "model_id": null
+  },
+  "rules": {
+    "id": "charter-vs-engineer-brief",
+    "items": [
+      [
+        "R1",
+        "Уточнения инженерного брифа (ограничения реализации, границы) отражены в charter."
+      ],
+      [
+        "R2",
+        "Charter не противоречит инженерному брифу."
+      ]
+    ]
+  },
+  "schema_version": 1,
+  "started_at": "2026-11-23T15:53:40.311158+00:00",
+  "subject": [
+    {
+      "path": "00-charter.md",
+      "role": "subject",
+      "sha256": "c3d26b80805f24e82746eaa89754f51496e0d6074f91a13e100100a1faeb00de",
+      "size": 38781
+    }
+  ],
+  "verdict": "PASS",
+  "wave": 1
+}
