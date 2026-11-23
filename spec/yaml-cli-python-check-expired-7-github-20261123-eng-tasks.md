@@ -248,7 +248,7 @@ owner_role: stream-owner
 - **AC-19** (test): Should-объём: полный вывод значений, нулевая настройка, приёмка по выводу
 
 ### TASK-001: Каркас пакета, чтение файла прав и единая форма ошибки
-P2 | TODO   Est: 0.5d
+P2 | 🔄 IN_PROGRESS   Est: 0.5d
 
 Реализовать сценарии BEH-14, BEH-19, BEH-20 (DT-01, группа foundation).
 Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-decomposition.md#DT-01
