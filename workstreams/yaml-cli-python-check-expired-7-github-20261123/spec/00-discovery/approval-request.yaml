@@ -1,0 +1,11 @@
+schema: discovery-brief-approval-request/v1
+purpose: discovery-brief-approval
+brief: brief.md
+brief_self_hash: "sha256:ecc26cde53e826456ccb21b3c6e7147e8d5071c1f6dbe069bfe500554b1858cf"
+policy:
+  repo: "darkfactory-config"
+  ref: "test"
+  path: "accounts.human"
+  sha: "457c105e77b6cbbec94a5411ee3b0d74725195d6"
+run_id: "yaml-cli-python-check-expired-7-github-20261123-330c15"
+ws_id: "yaml-cli-python-check-expired-7-github-20261123"
