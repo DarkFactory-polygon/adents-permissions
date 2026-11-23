@@ -493,7 +493,7 @@ Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-
 **Traces to:** [NFR-09], [NFR-06]
 
 ### TASK-015: Пустой каталог: без сервера, базы данных и шага настройки
-P2 | TODO   Est: 0.5d
+P2 | ✅ DONE   Est: 0.5d
 
 Проверить сценарии BEH-31 (DT-15, группа environment).
 Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-decomposition.md#DT-15
@@ -503,8 +503,8 @@ Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-
 **Depends on:** [TASK-003], [TASK-004]
 
 **Checklist:**
-- [ ] проверить BEH-31: Пустой каталог: без сервера, базы данных и настройки (DEL-36 (document): Заполненный документ ручной проверки содержит: в пустом каталоге с единственным `permissions.yaml` обе команды дали ожидаемый вывод и ожидаемые коды выхода сразу после установки Python и PyYAML — без запуска сервера, создания базы данных и файла настройки, — и после завершения в системе не осталось фоновых процессов и служб инструмента)
-- [ ] проверка группы: tests/manual/test_zero_setup.md::MAN-NFR-10-empty-dir-no-server-no-db (kind: manual) зелёные на BEH-31
+- [x] проверить BEH-31: Пустой каталог: без сервера, базы данных и настройки (DEL-36 (document): Заполненный документ ручной проверки содержит: в пустом каталоге с единственным `permissions.yaml` обе команды дали ожидаемый вывод и ожидаемые коды выхода сразу после установки Python и PyYAML — без запуска сервера, создания базы данных и файла настройки, — и после завершения в системе не осталось фоновых процессов и служб инструмента)
+- [x] проверка группы: tests/manual/test_zero_setup.md::MAN-NFR-10-empty-dir-no-server-no-db (kind: manual) зелёные на BEH-31
 
 **Traces to:** [NFR-10]
 
