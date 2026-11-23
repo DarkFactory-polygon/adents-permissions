@@ -1,0 +1,99 @@
+{
+  "absence": [],
+  "attempt_id": "fd9aeae0f758485e980c72af73091d08",
+  "bases": [
+    {
+      "path": "00-discovery/upstream.md",
+      "role": "customer-brief",
+      "sha256": "d1bc06d8ea063bcf954d8c68f6acb3d64dbad1246f916145f0810f26499ef1b4",
+      "size": 20197
+    }
+  ],
+  "check_identity": "2daedf26aaed06512fa971ff71678608e5d6a8d1703d7cf66d0390183088f95e",
+  "context": {
+    "estimate_tokens": 15805,
+    "limit_tokens": 120000,
+    "method": "utf8-bytes/4",
+    "reserve_tokens": 8000,
+    "size": 63222,
+    "unit": "utf8-bytes"
+  },
+  "criteria": [
+    {
+      "id": "R1",
+      "reason": "Обе цели (G-01, G-02) и все двенадцать ограничений брифа заказчика (CON-01…CON-12) имеют адрес в charter, соответствие подтверждается таблицей трассировки, отклонённых элементов нет.",
+      "status": "pass"
+    },
+    {
+      "id": "R2",
+      "reason": "Раздел Goals charter содержит только G-01 и G-02, оба 1:1 из брифа заказчика; остальные добавления — ограничения, риски и границы, несомые ссылкой на инженерное основание, а не новые цели.",
+      "status": "pass"
+    },
+    {
+      "id": "R3",
+      "reason": "M-01 и M-02 charter совпадают с M-01 и M-02 брифа по формулировке, цели на 3 месяца, способу оценки и ссылке на базовый уровень Q-02.",
+      "status": "pass"
+    }
+  ],
+  "edge": "charter-vs-customer-brief",
+  "findings": [
+    {
+      "class": "minor",
+      "location": {
+        "lines": [
+          24,
+          31
+        ],
+        "path": "00-charter.md"
+      },
+      "rule_id": "R2",
+      "statement": "Charter опирается также на инженерный бриф (`brief.md`), которого во входе нет: элементы CON-11…CON-13, OUT-08, RK-05…RK-07, Q-05 и закрытие конфликтов X-01…X-04 несутся ссылкой на это основание и здесь не проверяемы; целями они не являются, поэтому R2 не нарушают."
+    }
+  ],
+  "finished_at": "2026-11-23T15:53:40.309089+00:00",
+  "node": "charter",
+  "result_key": "863cef03550e8deaeafdaef57377faf7c431b7dae1105e63612566e0d5079f29",
+  "reviewer": {
+    "effort": null,
+    "env_passthrough": [
+      "ANTHROPIC_BASE_URL",
+      "HOME",
+      "PATH",
+      "TMPDIR",
+      "USER"
+    ],
+    "harness": "claude",
+    "harness_version": "2.1.330 (Claude Code)",
+    "model": "claude-opus-5",
+    "model_id": null
+  },
+  "rules": {
+    "id": "charter-vs-customer-brief",
+    "items": [
+      [
+        "R1",
+        "Каждая цель и ограничение брифа заказчика отражены в charter или явно отклонены с причиной."
+      ],
+      [
+        "R2",
+        "Charter не вводит целей, отсутствующих в брифе."
+      ],
+      [
+        "R3",
+        "Метрики charter выводимы из брифа."
+      ]
+    ]
+  },
+  "schema_version": 1,
+  "started_at": "2026-11-23T15:52:34.215835+00:00",
+  "subject": [
+    {
+      "path": "00-charter.md",
+      "role": "subject",
+      "sha256": "c3d26b80805f24e82746eaa89754f51496e0d6074f91a13e100100a1faeb00de",
+      "size": 38781
+    }
+  ],
+  "verdict": "PASS",
+  "wave": 1
+}
