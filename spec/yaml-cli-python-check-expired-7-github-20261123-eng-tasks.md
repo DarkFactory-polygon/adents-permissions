@@ -310,7 +310,7 @@ Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-
 **Traces to:** [FR-01], [FR-04], [FR-10], [FR-07], [NFR-01]
 
 ### TASK-004: Ответ `expired`: две группы, окно семи дней, порядок строк, пять полей в строке
-P2 | TODO   Est: 0.5d
+P2 | 🔄 IN_PROGRESS   Est: 0.5d
 
 Реализовать сценарии BEH-09, BEH-10, BEH-11, BEH-13 (DT-04, группа commands).
 Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-decomposition.md#DT-04
