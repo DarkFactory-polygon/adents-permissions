@@ -509,7 +509,7 @@ Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-
 **Traces to:** [NFR-10]
 
 ### TASK-016: Приёмка по выводу команд на примерах пользователя
-P2 | TODO   Est: 0.5d
+P2 | ✅ DONE   Est: 0.5d
 
 Проверить сценарии BEH-32 (DT-16, группа environment).
 Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-decomposition.md#DT-16
@@ -519,8 +519,8 @@ Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-
 **Depends on:** [TASK-003], [TASK-004]
 
 **Checklist:**
-- [ ] проверить BEH-32: Приёмка по выводу команд на примерах пользователя (DEL-37 (document): Заполненный документ приёмки содержит сверку напечатанного вывода обеих команд с ожидаемым на примерах «вход и правильный выход», закрывающую приёмку без артефактов помимо вывода команд, и запись о том, что инструмент за время приёмки не создал ни отчётов, ни журналов аудита)
-- [ ] проверка группы: tests/manual/test_user_acceptance.md::MAN-NFR-11-output-only-acceptance (kind: manual) зелёные на BEH-32
+- [x] проверить BEH-32: Приёмка по выводу команд на примерах пользователя (DEL-37 (document): Заполненный документ приёмки содержит сверку напечатанного вывода обеих команд с ожидаемым на примерах «вход и правильный выход», закрывающую приёмку без артефактов помимо вывода команд, и запись о том, что инструмент за время приёмки не создал ни отчётов, ни журналов аудита)
+- [x] проверка группы: tests/manual/test_user_acceptance.md::MAN-NFR-11-output-only-acceptance (kind: manual) зелёные на BEH-32
 
 **Traces to:** [NFR-11]
 
