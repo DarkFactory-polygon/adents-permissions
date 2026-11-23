@@ -364,7 +364,7 @@ Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-
 **Traces to:** [FR-01], [FR-03], [FR-07]
 
 ### TASK-007: Выбор файла прав и граница двух команд с подсказкой вызова
-P2 | TODO   Est: 0.5d
+P2 | 🔄 IN_PROGRESS   Est: 0.5d
 
 Реализовать сценарии BEH-21, BEH-22 (DT-07, группа cross-checks).
 Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-decomposition.md#DT-07
