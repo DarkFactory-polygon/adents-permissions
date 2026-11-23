@@ -1,0 +1,162 @@
+{
+  "absence": [],
+  "attempt_id": "5ef772a9ac804381b8a9a6f8fc33c8ca",
+  "bases": [
+    {
+      "path": "20-design.md",
+      "role": "design",
+      "sha256": "ef25db63febd64b6ed32a7edc6723baf84565d8cd15c7ca99dd00e6507624143",
+      "size": 47865
+    },
+    {
+      "path": "25-acceptance.md",
+      "role": "acceptance",
+      "sha256": "72ae52d2f8416015815ef1f32bc407eb7b5776168ea26d96ae8e8978d3b090ad",
+      "size": 45011
+    }
+  ],
+  "check_identity": "c139e5da324956c0b164f16ede2b8d0448bf6b6444849eeaeff2a2e9bc695c9b",
+  "context": {
+    "estimate_tokens": 38905,
+    "limit_tokens": 120000,
+    "method": "utf8-bytes/4",
+    "reserve_tokens": 8000,
+    "size": 155622,
+    "unit": "utf8-bytes"
+  },
+  "criteria": [
+    {
+      "id": "R1",
+      "reason": "каждый DT несёт в delivers.sources ссылки на решения дизайна и критерии приёмки, которые реализует",
+      "status": "pass"
+    },
+    {
+      "id": "R2",
+      "reason": "все критерии AC-01…AC-19 закрыты хотя бы одним DT через delivers и сценарии",
+      "status": "pass"
+    },
+    {
+      "id": "R3",
+      "reason": "обязательства задач сводимы к дизайну и приёмке; отклонения только совещательного класса (фикстура, узлы проверок)",
+      "status": "pass"
+    },
+    {
+      "id": "R4",
+      "reason": "рёбра depends_on совпадают с порядком точек врезки дизайна, граф ацикличен, delivered_by достижим",
+      "status": "pass"
+    }
+  ],
+  "edge": "decomposition-vs-design-acceptance",
+  "findings": [
+    {
+      "class": "minor",
+      "location": {
+        "lines": [
+          7,
+          9
+        ],
+        "path": "30-decomposition.md"
+      },
+      "rule_id": "R1",
+      "statement": "Объявленные upstream_hashes (design 6aa59abe…, acceptance fafa56a6…) не совпадают с approved_content_hash переданных оснований (design 27f662aa…, acceptance b808e5d3…), то есть ссылки формально указывают на другую ревизию."
+    },
+    {
+      "class": "minor",
+      "location": {
+        "lines": [
+          149,
+          152
+        ],
+        "path": "30-decomposition.md"
+      },
+      "rule_id": "R1",
+      "statement": "DEL-17 ссылается на design#Q-12 (порядок строк expired), тогда как правило выбора показываемой записи check зафиксировано в D-07; та же неточность в DEL-01 (design#Q-06 вместо D-18/D-13) и DEL-13 (design#Q-06 вместо D-03)."
+    },
+    {
+      "class": "minor",
+      "location": {
+        "lines": [
+          207,
+          210
+        ],
+        "path": "30-decomposition.md"
+      },
+      "rule_id": "R3",
+      "statement": "DEL-23 требует воспроизводимо собираемой фикстуры на 200 записей «без правки руками» — такого обязательства нет ни в AC-05 (нужен лишь файл с заранее известными 60 просроченными), ни в дизайне, который способ генерации файлов и организацию фикстур оставляет реализации."
+    },
+    {
+      "class": "minor",
+      "location": {
+        "lines": [
+          396,
+          403
+        ],
+        "path": "30-decomposition.md"
+      },
+      "rule_id": "R3",
+      "statement": "DT-14 (и так же DT-15, DT-16) перечисляет в verifies точные идентификаторы функций проверок, хотя дизайн закрепляет только пути checked_by, а тексты проверок и внутренние имена оставляет реализации — обязательство сверх дизайна и приёмки."
+    },
+    {
+      "class": "minor",
+      "location": {
+        "lines": [
+          245,
+          249
+        ],
+        "path": "30-decomposition.md"
+      },
+      "rule_id": "R4",
+      "statement": "Решение D-14 разделено между задачами: DEL-25 доставляет выбор файла по --file только в DT-07 (после DT-03 и DT-04), тогда как DEL-03 в DT-01 уже требует разрешать тот же путь для строки об отсутствующем файле."
+    }
+  ],
+  "finished_at": "2026-11-23T17:28:43.153327+00:00",
+  "node": "decomposition",
+  "result_key": "7f175a55b4280744859720f0a490881eed1ba8b2895f8a9c13f1e5c7fbc7a6af",
+  "reviewer": {
+    "effort": null,
+    "env_passthrough": [
+      "ANTHROPIC_BASE_URL",
+      "HOME",
+      "PATH",
+      "TMPDIR",
+      "USER"
+    ],
+    "harness": "claude",
+    "harness_version": "2.1.330 (Claude Code)",
+    "model": "claude-opus-5",
+    "model_id": null
+  },
+  "rules": {
+    "id": "decomposition-vs-design-acceptance",
+    "items": [
+      [
+        "R1",
+        "Каждый DT ссылается на решение дизайна или критерий приёмки, который он реализует."
+      ],
+      [
+        "R2",
+        "Каждый критерий приёмки закрыт хотя бы одним DT (сценарии или delivers)."
+      ],
+      [
+        "R3",
+        "DT не вводит обязательств, отсутствующих в дизайне и приёмке."
+      ],
+      [
+        "R4",
+        "Зависимости DT совместимы с порядком, который задаёт дизайн."
+      ]
+    ]
+  },
+  "schema_version": 1,
+  "started_at": "2026-11-23T17:22:00.679117+00:00",
+  "subject": [
+    {
+      "path": "30-decomposition.md",
+      "role": "subject",
+      "sha256": "de95d28866d31bf3cda6d937527992845be17d5b30f406aa85abca01604a213c",
+      "size": 58160
+    }
+  ],
+  "verdict": "PASS",
+  "wave": 5
+}
