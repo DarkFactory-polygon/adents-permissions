@@ -1,0 +1,132 @@
+{
+  "absence": [],
+  "attempt_id": "7a62bda3e0e14d529b7cac6b5550a305",
+  "bases": [
+    {
+      "path": "00-charter.md",
+      "role": "charter",
+      "sha256": "66ec045b401ed5afd3a380fb19a5189cfdd3767dadf9ccdf237bcce69a0a4ba5",
+      "size": 38918
+    }
+  ],
+  "check_identity": "115524c0d54d00d5c88d8a98ca57ca4c88245e1facafe9774e54db2294ee407a",
+  "context": {
+    "estimate_tokens": 20382,
+    "limit_tokens": 120000,
+    "method": "utf8-bytes/4",
+    "reserve_tokens": 8000,
+    "size": 81531,
+    "unit": "utf8-bytes"
+  },
+  "criteria": [
+    {
+      "id": "R1",
+      "reason": "таблицы трассировки покрывают G-01/G-02, CON-01…CON-13 и M-01/M-02, причём CON-09 и CON-10 несут явное отклонение с названной причиной",
+      "status": "pass"
+    },
+    {
+      "id": "R2",
+      "reason": "ни одно Must-требование не противоречит ограничениям charter; расхождений с CON-01…CON-13 нет, есть лишь совещательное замечание о делегировании Must к Should-требованию FR-04",
+      "status": "pass"
+    },
+    {
+      "id": "R3",
+      "reason": "все добавленные требования ссылаются на существующие элементы charter, новых целей без ссылки нет",
+      "status": "pass"
+    },
+    {
+      "id": "R4",
+      "reason": "формулировки Must/Should заданы через вывод, код выхода и состояние ФС; стековые формулировки — повтор решений charter со ссылкой",
+      "status": "pass"
+    }
+  ],
+  "edge": "requirements-vs-charter",
+  "findings": [
+    {
+      "class": "minor",
+      "location": {
+        "lines": [
+          168,
+          170
+        ],
+        "path": "10-requirements.md"
+      },
+      "rule_id": "R2",
+      "statement": "FR-09 (Must) сводит реакцию на неизвестную команду к «ошибке по FR-04», а приёмка NFR-01 (Must) требует отсутствия кода 0 — обе опираются на коды выхода, заданные в FR-04 с приоритетом Should, то есть Must-обязательство делегировано требованию более низкого приоритета."
+    },
+    {
+      "class": "minor",
+      "location": {
+        "lines": [
+          229,
+          234
+        ],
+        "path": "10-requirements.md"
+      },
+      "rule_id": "R3",
+      "statement": "NFR-03 назначает конкретный порог «2 секунды на файле до 1000 записей», которого в charter нет: charter задаёт цель ссылкой на открытый Q-01; порог оформлен допущением A-01 со ссылкой на charter#Q-01, поэтому новой цели без ссылки не вводит, но числовое обязательство принято на этом уровне."
+    },
+    {
+      "class": "minor",
+      "location": {
+        "lines": [
+          225,
+          226
+        ],
+        "path": "10-requirements.md"
+      },
+      "rule_id": "R4",
+      "statement": "В формулировке NFR-03 добавленное «без шага подготовки данных» описывает внутреннее устройство обработки, а не наблюдаемый снаружи результат, и в приёмку требования не попадает (проверяются время ответа и отсутствие фоновых процессов)."
+    }
+  ],
+  "finished_at": "2026-11-23T16:06:13.395566+00:00",
+  "node": "requirements",
+  "result_key": "4b67d47cd93e77a7bb2ece6ba0916a301e3288b687acdb43b10db64e84799896",
+  "reviewer": {
+    "effort": null,
+    "env_passthrough": [
+      "ANTHROPIC_BASE_URL",
+      "HOME",
+      "PATH",
+      "TMPDIR",
+      "USER"
+    ],
+    "harness": "claude",
+    "harness_version": "2.1.330 (Claude Code)",
+    "model": "claude-opus-5",
+    "model_id": null
+  },
+  "rules": {
+    "id": "requirements-vs-charter",
+    "items": [
+      [
+        "R1",
+        "Каждая цель, ограничение и метрика charter (G-*, CON-*, M-*) имеет хотя бы одно требование, которое её реализует или явно отклоняет с названной причиной."
+      ],
+      [
+        "R2",
+        "Ни одно Must-требование не противоречит ограничениям charter."
+      ],
+      [
+        "R3",
+        "Требование не вводит цель, которой нет в charter, без ссылки на него."
+      ],
+      [
+        "R4",
+        "Формулировка каждого Must/Should проверяема снаружи: наблюдаемый результат, не внутреннее устройство."
+      ]
+    ]
+  },
+  "schema_version": 1,
+  "started_at": "2026-11-23T16:02:55.357984+00:00",
+  "subject": [
+    {
+      "path": "10-requirements.md",
+      "role": "subject",
+      "sha256": "6413a1b260fbb87ae38e0b15127a75aa15c6eab2a866e66b1edc72b4ce2901be",
+      "size": 38013
+    }
+  ],
+  "verdict": "PASS",
+  "wave": 2
+}
