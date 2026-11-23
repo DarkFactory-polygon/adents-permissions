@@ -477,7 +477,7 @@ Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-
 **Traces to:** [NFR-08]
 
 ### TASK-014: Чистое окружение: Python 3.12 и только PyYAML, без оплаты
-P2 | TODO   Est: 0.5d
+P2 | 🔄 IN_PROGRESS   Est: 0.5d
 
 Проверить сценарии BEH-30 (DT-14, группа environment).
 Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-decomposition.md#DT-14
