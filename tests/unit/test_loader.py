@@ -7,7 +7,7 @@ from agentperm.loader import load_records
 
 def test_valid_records(tmp_path):
     p = tmp_path / "p.yaml"
-    p.write_text("permissions:\n  - {agent: a}\n  - {agent: b}\n")
+    p.write_text("permissions:\n  - {agent: a, resource: r, action: x, granted_by: g, until: 2030-01-01}\n  - {agent: b, resource: r, action: x, granted_by: g, until: 2030-01-01}\n")
     assert len(load_records(str(p))) == 2
 
 
@@ -56,3 +56,36 @@ def test_empty_registry_codes(tmp_path, capsys):
     p.write_text("permissions: []\n")
     assert main(["expired", "--file", str(p)]) == 0
     assert main(["check", "a", "b", "c", "--file", str(p)]) == 1
+
+
+def _rec(text):
+    import yaml
+
+    from agentperm.record import build_record
+
+    return build_record(yaml.compose(text), 1, "f.yaml")
+
+
+def test_scalars_keep_source_text():
+    r = _rec(
+        "{agent: no, resource: 'null', action: '~', granted_by: 0007, until: '2030-01-01'}"
+    )
+    assert (r.agent, r.resource, r.action, r.granted_by) == ("no", "null", "~", "0007")
+    assert str(r.until) == "2030-01-01"
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "{agent: [a], resource: r, action: x, granted_by: g, until: 2030-01-01}",
+        "{[a]: 1, resource: r, action: x, granted_by: g, until: 2030-01-01}",
+        "{agent: a, agent: b, resource: r, action: x, granted_by: g, until: 2030-01-01}",
+        "{agent: a, resource: r, action: x, granted_by: g, until: 2030-01-01, z: 1}",
+        "{agent: a, resource: r, action: x, granted_by: g}",
+        "{agent: '', resource: r, action: x, granted_by: g, until: 2030-01-01}",
+        "{agent: a, resource: r, action: x, granted_by: g, until: 0000-01-01}",
+    ],
+)
+def test_bad_records(text):
+    with pytest.raises(RegistryError):
+        _rec(text)

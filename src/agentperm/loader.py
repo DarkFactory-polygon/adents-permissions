@@ -5,6 +5,7 @@ from __future__ import annotations
 import yaml
 
 from agentperm.errors import RegistryError
+from agentperm.record import Record, build_record
 
 TOP_KEY = "permissions"
 
@@ -17,8 +18,8 @@ def _one_line(text: str) -> str:
     return " ".join(str(text).split())
 
 
-def load_records(path: str) -> list[yaml.MappingNode]:
-    """Вернуть узлы записей списка `permissions`; любое отклонение — RegistryError."""
+def load_records(path: str) -> list[Record]:
+    """Вернуть проверенные записи `permissions`; любое отклонение — RegistryError."""
     try:
         with open(path, "rb") as handle:
             raw = handle.read()
@@ -74,11 +75,11 @@ def load_records(path: str) -> list[yaml.MappingNode]:
     if not isinstance(value, yaml.SequenceNode):
         raise RegistryError(f"значение {TOP_KEY} не список", path, _line(value))
 
-    records: list[yaml.MappingNode] = []
+    records: list[Record] = []
     for number, item in enumerate(value.value, start=1):
         if not isinstance(item, yaml.MappingNode):
             raise RegistryError(
                 "элемент списка не является отображением", path, _line(item), number
             )
-        records.append(item)
+        records.append(build_record(item, number, path))
     return records

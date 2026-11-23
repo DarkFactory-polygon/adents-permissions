@@ -268,7 +268,7 @@ Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-
 **Traces to:** [FR-03], [FR-05], [NFR-01], [FR-06]
 
 ### TASK-002: Валидация записи: пятёрка полей, пустые значения, дубликаты, дата окончания
-P2 | TODO   Est: 0.5d
+P2 | 🔄 IN_PROGRESS   Est: 0.5d
 
 Реализовать сценарии BEH-15, BEH-16, BEH-17, BEH-18 (DT-02, группа foundation).
 Source: workstreams/yaml-cli-python-check-expired-7-github-20261123-eng/spec/30-decomposition.md#DT-02
