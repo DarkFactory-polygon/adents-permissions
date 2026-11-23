@@ -1,12 +1,14 @@
 ---
 spec_stage: requirements
-status: approval_pending
+status: approved
 owner_role: product
 traces_to: [charter]
 upstream_hashes:
   charter: "8d867316382df0fcefe8b2d96e0e62e9ddb23249"
 approved_content_hash: aba7a48a678d411ed73e30b2a2983ce840a97b4c
 version: 2
+approved_at: '2026-11-23T16:08:14Z'
+approved_by: ai-prosto
 ---
 
 # Requirements — Реестр прав агентов: YAML-файл и локальный CLI (check, expired)
